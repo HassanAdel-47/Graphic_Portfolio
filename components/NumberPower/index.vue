@@ -33,7 +33,7 @@
 import { usePostsStore } from "~/store/data";
 
 const allPostsStore = usePostsStore();
-const post = await allPostsStore.storePendingPosts;
+const post = await allPostsStore.pendingPosts;
 const projects = ref<number>(0);
 const clients = ref<number>(0);
 const countries = ref<number>(0);

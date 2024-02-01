@@ -10,5 +10,5 @@
 import { usePostsStore } from "~/store/data";
 const allPostsStore = usePostsStore();
 // get theme mode from
-const isDark = computed(() => allPostsStore.isDark);
+allPostsStore.initialStore();
 </script>

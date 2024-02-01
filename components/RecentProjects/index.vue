@@ -75,13 +75,12 @@ import { Autoplay, EffectCoverflow, Pagination } from "swiper/modules";
 import { storeToRefs } from "pinia";
 import { usePostsStore } from "~/store/data";
 const allPostsStore = usePostsStore();
-const { storeRecentPosts } = storeToRefs(allPostsStore);
 const modules = [Autoplay, EffectCoverflow, Pagination];
 
 const recentPosts = ref();
 const images = ref<any>([]);
 onMounted(async () => {
-  recentPosts.value = storeRecentPosts.value;
+  recentPosts.value = await allPostsStore.recentPosts;
 
   // Convert the array to the Primevue array shape
   recentPosts.value.forEach((item: any) => {

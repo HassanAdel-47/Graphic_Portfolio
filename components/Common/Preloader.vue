@@ -57,9 +57,9 @@ const allPostsStore = usePostsStore();
 const showBlack = ref(false);
 //Animation
 const { $anime } = useNuxtApp();
-onMounted(() => {
-  setTimeout(() => {
-    showBlack.value = allPostsStore.storeIsDataFetched;
+onMounted(async () => {
+  setTimeout(async () => {
+    showBlack.value = await allPostsStore.isDataFetched;
   }, 2000);
   $anime({
     targets: ".lines path",

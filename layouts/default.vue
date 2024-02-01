@@ -18,9 +18,9 @@
 import { usePostsStore } from "~/store/data";
 const allPostsStore = usePostsStore();
 const showBlack = ref(false);
-onMounted(() => {
-  setTimeout(() => {
-    showBlack.value = allPostsStore.storeIsDataFetched;
+onMounted(async () => {
+  setTimeout(async () => {
+    showBlack.value = await allPostsStore.isDataFetched;
   }, 2000);
 });
 </script>

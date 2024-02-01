@@ -88,7 +88,6 @@ import HealingLight from "~/assets/imgs/photoshopLight/Layer (1).png";
 import { storeToRefs } from "pinia";
 import { usePostsStore } from "~/store/data";
 const allPostsStore = usePostsStore();
-const { storePhotoshopPreview } = storeToRefs(allPostsStore);
 // get theme mode from
 const isDark = computed(() => allPostsStore.isDark);
 
@@ -106,7 +105,7 @@ const responsiveOptions = ref([
 ]);
 const images = ref<any>([]);
 onMounted(async () => {
-  photoshopPreview.value = storePhotoshopPreview.value;
+  photoshopPreview.value = await allPostsStore.photoshopPreview;
 
   // Convert the array to the Primevue array shape
   photoshopPreview.value.forEach((item: any) => {

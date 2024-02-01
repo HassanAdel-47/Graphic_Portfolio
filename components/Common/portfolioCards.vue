@@ -148,14 +148,13 @@ defineProps({
 const route = useRoute();
 
 const allPostsStore = usePostsStore();
-const { storeAllposts, storeRecentPosts } = storeToRefs(allPostsStore);
 const allPosts = ref<any>([]);
 const recentPosts = ref();
 const toast = useToast();
 
 onMounted(async () => {
-  allPosts.value = storeAllposts.value;
-  recentPosts.value = storeRecentPosts.value;
+  allPosts.value = await allPostsStore.posts;
+  recentPosts.value = await allPostsStore.recentPosts;
 });
 
 // lightbox to preview image
