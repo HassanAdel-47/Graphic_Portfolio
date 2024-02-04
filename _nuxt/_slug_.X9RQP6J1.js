@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper.x3n3nnut.js";import{L as e,J as t}from"./swiper-vue.qz64L6YE.js";const c={},s={class:"font-bold"};function r(_,n){return t(),e("div",s,"Slug")}const l=o(c,[["render",r]]);export{l as default};
